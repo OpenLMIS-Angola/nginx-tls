@@ -48,8 +48,8 @@ http {
         server_name ${VIRTUAL_HOST};
         ssl_certificate           /etc/letsencrypt/live/${VIRTUAL_HOST}/fullchain.pem;
         ssl_certificate_key       /etc/letsencrypt/live/${VIRTUAL_HOST}/privkey.pem;
-        include                   /etc/letsencrypt/conf/options-ssl-nginx.conf;
-        ssl_dhparam               /etc/letsencrypt/conf/ssl-dhparams.pem;
+        include                   /etc/nginx/options-ssl-nginx.conf;
+        ssl_dhparam               /etc/nginx/ssl-dhparams.pem;
 
         location / {
             proxy_pass http://${NGINX_REVERSE_PROXY}/;
